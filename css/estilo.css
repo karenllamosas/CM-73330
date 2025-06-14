@@ -1,0 +1,224 @@
+/**INDEX**/
+body{
+    margin: 0;
+    background-color: aliceblue;
+    width: auto;
+
+}
+.contenedor-grid{
+    display: grid;
+    grid-template-columns: 1fr, 4fr;
+    grid-template-areas: 
+    "header header"
+    "nav nav"
+    "main sidebar"
+    "footer footer";
+    gap: 20px;
+    height: 100vh;
+    padding: 10px;
+}
+/*--MediaQueris--*/
+/*--Media Queries para diferentes pantallas--*/
+
+/*--Para pantallas mediana--*/
+@media screen and (min-width: 600px) {
+    .contenedor-grid {
+        grid-template-columns: auto; /* Dos columnas: Nav izquierda, Main/Aside derecha */
+        grid-template-rows: auto auto auto; /* Header, Contenido, Footer */
+        grid-template-areas:
+            "header header"
+            "nav    main"
+            "nav    sidebar"
+            "footer footer";
+    }
+}
+
+/*--Para pantallas grandes (desktops)--*/
+@media screen and (min-width: 1024px) {
+    .contenedor-grid {
+        grid-template-columns: 1fr 3fr 1fr; /* Tres columnas: Nav, Main, Aside */
+        grid-template-rows: auto 1fr auto; /* Header, Contenido, Footer */
+        grid-template-areas:
+            "header header header"
+            "nav    nav   nav"
+            "main main sidebar"
+            "footer footer footer";
+    }
+}
+/*--Header del index--*/
+.item1{
+    grid-area: header;
+    background-color: orange;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.titulo{
+    background-color: beige;
+    border-radius: 5px;
+}
+.titulo:hover{
+    background-color: orangered;
+    color: aliceblue;
+    border-radius: 5px;
+}
+/*--Nav del index--*/
+.item2{
+grid-area: nav;
+gap: 50px;
+display:flex;
+justify-content: center;
+align-items: center;
+text-shadow: #302a19;
+padding: 5px;
+border: 10px;
+border-radius: 5px;
+padding: 10px;
+margin: 5px;
+}
+.item2 a {
+    text-decoration: none;
+}
+.item2 button{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.item2 button :hover{
+    background-color: beige;
+    color: aliceblue;
+}
+/**--Main del Index--*/
+.item3{
+    grid-area: main;
+    background-color: orange;
+    padding: 20px;
+    box-shadow: 0 0 10px blue;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin-top: 20px;
+}
+form label{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+form input{
+    background-color: aquamarine;
+}
+form text area{
+    padding: 10px;
+    border:1rem solid salmon;
+    border-radius: 5px;
+    font-size: 1rem;
+
+}
+input:focus{
+    border: 2px solid black;
+}
+/*--aside del index--*/
+.item4{
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    border: 10px;
+    border-radius: solid black;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+}
+/*--footer del index--*/
+.item5{
+    grid-area: footer;
+    background-color: orangered;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*--PILATES--*/
+.contenedor-pilates{
+    display: grid;
+    grid-template-areas: "header header header"
+    "nav nav nav"
+    "main main sidebar"
+    "footer footer footer";
+    grid-template-columns: auto;
+    grid-template-rows:auto}
+    .item1pila{
+    background-color: aqua;
+    text-decoration: underline;
+    text-align: center;
+    grid-area: header;
+}
+.item2pilates{
+    grid-area: nav;
+
+
+    
+}
+.item2pilates button:hover{
+    background-color: blue;
+    text-decoration: none;
+
+}
+a{text-decoration: none;}
+.item3pilates{
+    grid-area: main;
+
+}
+.item4pilates{
+    grid-area: sidebar;
+
+}
+.item5pilates{
+    grid-area: footer;
+}
+/*--Yoga--*/
+.contenedor-yoga{
+    display: flex; 
+    flex-direction: column;
+    padding: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    gap: 40px;
+    
+}
+/*--yoga header--*/
+.header-yoga{
+    grid-area: header;
+    background-color: blueviolet;
+    padding: 10px;
+
+}
+/*--yoga nav--*/
+.nav-yoga{
+    grid-area: nav;
+    color: aliceblue;
+}
+/*--yoga main--*/
+.main-yoga{
+    grid-area: main;
+
+}
+/*--yoga aside--*/
+.aside-yoga{
+    grid-area: sidebar;
+    background-color: bisque;
+}
+/*--yoga footer--*/
+.footer-yoga{
+    grid-area: footer;
+}
+
+
+/*--GALERIA--*/
