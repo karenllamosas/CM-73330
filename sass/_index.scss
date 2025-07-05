@@ -1,0 +1,16 @@
+
+$colores-lua: (
+  letra-lua-1: #66e76a,
+  letra-lua-2: hsl(36, 100%, 50%),
+  letra-lua-3: hsl(54, 100%, 62%)
+);
+@each $clase-letra, $color-hex in $colores-lua {
+  .#{$clase-letra} {
+    color: $color-hex;
+  }
+}
+.titulo {
+  font-family: 'Lunasima', sans-serif;
+  font-size: 3em;
+  text-align: center;
+}

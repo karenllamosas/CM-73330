@@ -1,0 +1,18 @@
+@import "_index.scss";
+@import "_pilates.scss";
+@import "_yoga.scss";
+@import "_galeria.scss";
+@import "_sobrenosotros.scss";
+
+nav{ background-color: orange;}
+@mixin border-radius ($radius){ border-radius: $radius;}
+.header{
+    @include border-radius(50px)
+
+}
+.header-pilates{
+    @include border-radius(50px)
+        }
+        .nav-logo{
+            justify-content: flex-start;
+        }

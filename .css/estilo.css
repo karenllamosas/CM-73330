@@ -1,0 +1,35 @@
+.letra-lua-1 {
+  color: #66e76a;
+}
+
+.letra-lua-2 {
+  color: hsl(36, 100%, 50%);
+}
+
+.letra-lua-3 {
+  color: hsl(54, 100%, 62%);
+}
+
+.titulo {
+  font-family: "Lunasima", sans-serif;
+  font-size: 3em;
+  text-align: center;
+}
+
+nav {
+  background-color: orange;
+}
+
+.header {
+  border-radius: 50px;
+}
+
+.header-pilates {
+  border-radius: 50px;
+}
+
+.nav-logo {
+  justify-content: flex-start;
+}
+
+/*# sourceMappingURL=estilo.css.map */
