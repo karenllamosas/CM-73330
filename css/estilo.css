@@ -1,13 +1,16 @@
 /**INDEX**/
 body{
+    font-family: url(https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Lunasima:wght@400;700&display=swap);
     margin: 0;
+    padding: 0%;
     background-color: aliceblue;
-    width: auto;
+    min-height: 100vh;
 
 }
+/*--index--*/
 .contenedor-grid{
     display: grid;
-    grid-template-columns: 1fr, 4fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-areas: 
     "header header"
     "nav nav"
@@ -23,30 +26,100 @@ body{
 /*--Para pantallas mediana--*/
 @media screen and (min-width: 600px) {
     .contenedor-grid {
-        grid-template-columns: auto; /* Dos columnas: Nav izquierda, Main/Aside derecha */
-        grid-template-rows: auto auto auto; /* Header, Contenido, Footer */
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto; 
         grid-template-areas:
             "header header"
             "nav    main"
             "nav    sidebar"
             "footer footer";
     }
+    .contenedor-pilates{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto; 
+        grid-template-areas:
+        "header-pilates header-pilates"
+        "nav-pilates nav-pilates"
+        "main-pilates aside-pilates"
+        "footer-pilates footer-pilates";
+
+    }
+    .contenedor-yoga{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto; 
+        grid-template-areas:
+        "header header"
+        "nav nav"
+        "sidebar main"
+        "footer footer";
+    }
+    .contenedor-galeria{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto; 
+        grid-template-areas:
+    "header-galeria header-galeria"
+    "nav-galeria nav-galeria"
+    "main-galeria aside-galeria"
+    "footer-galeria footer-galeria"}
+    .contenedor-sobre-nosotros{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto; 
+        grid-template-areas: "header-sobre-nosotros header-sobre-nosotros"
+    "nav-sobre-nosotros nav-sobre-nosotros"
+    "main-sobre-nosotros asidebar-sobre-nosotros"
+    "footer-sobre-nosotros footer-sobre-nosotros"
+    }
 }
 
 /*--Para pantallas grandes (desktops)--*/
 @media screen and (min-width: 1024px) {
     .contenedor-grid {
-        grid-template-columns: 1fr 3fr 1fr; /* Tres columnas: Nav, Main, Aside */
-        grid-template-rows: auto 1fr auto; /* Header, Contenido, Footer */
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto 1fr auto; 
         grid-template-areas:
             "header header header"
             "nav    nav   nav"
             "main main sidebar"
             "footer footer footer";
     }
+        .contenedor-pilates{
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto 1fr auto; 
+        grid-template-areas:
+        "header-pilates header-pilates"
+        "nav-pilates nav-pilates"
+        "main-pilates aside-pilates"
+        "footer-pilates footer-pilates"
+
+    }
+    .contenedor-yoga{
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto 1fr auto;  
+        grid-template-areas:
+        "header header"
+        "nav nav"
+        "sidebar main"
+        "footer footer";
+    }
+    .contenedor-galeria{
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto 1fr auto; 
+        grid-template-areas: "header-galeria header-galeria"
+    "nav-galeria nav-galeria"
+    "main-galeria aside-galeria"
+    "footer-galeria footer-galeria"
+    }
+    .contenedor-sobre-nosotros{
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto 1fr auto; 
+        grid-template-areas: "header-sobre-nosotros header-sobre-nosotros"
+    "nav-sobre-nosotros nav-sobre-nosotros"
+    "main-sobre-nosotros asidebar-sobre-nosotros"
+    "footer-sobre-nosotros footer-sobre-nosotros"
+    }
 }
 /*--Header del index--*/
-.item1{
+.header{
     grid-area: header;
     background-color: orange;
     color: red;
@@ -73,7 +146,7 @@ justify-content: center;
 align-items: center;
 text-shadow: #302a19;
 padding: 5px;
-border: 10px;
+border: 10px rgb(167, 45, 45) solid;
 border-radius: 5px;
 padding: 10px;
 margin: 5px;
@@ -91,7 +164,7 @@ margin: 5px;
     cursor: pointer;
 
 }
-.item2 button :hover{
+.item2 button:hover{
     background-color: beige;
     color: aliceblue;
 }
@@ -116,7 +189,7 @@ form label{
 form input{
     background-color: aquamarine;
 }
-form text area{
+form textarea{
     padding: 10px;
     border:1rem solid salmon;
     border-radius: 5px;
@@ -131,7 +204,7 @@ input:focus{
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
-    border: 10px;
+    border: 10px white transparent;
     border-radius: solid black;
     justify-content: center;
     align-items: center;
@@ -148,77 +221,348 @@ input:focus{
 }
 /*--PILATES--*/
 .contenedor-pilates{
-    display: grid;
-    grid-template-areas: "header header header"
-    "nav nav nav"
-    "main main sidebar"
-    "footer footer footer";
-    grid-template-columns: auto;
-    grid-template-rows:auto}
-    .item1pila{
-    background-color: aqua;
-    text-decoration: underline;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-areas: "header-pilates header-pilates"
+"nav-pilates nav-pilates"
+"main-pilates aside-pilates"
+"footer-pilates footer-pilates";
+background-color: rgb(239, 241, 241);
+height: 100vh;
+padding: 10px;
+gap: 10px;
+}
+/*----header pilates----*/
+.header-pilates{
+    grid-area: header-pilates;
+    background-color: orangered;
+    align-items: center;
     text-align: center;
-    grid-area: header;
 }
-.item2pilates{
-    grid-area: nav;
-
-
-    
+/*----nav pilates----*/
+.nav-pilates{
+    grid-area: nav-pilates;
+gap: 50px;
+display:flex;
+justify-content: center;
+align-items: center;
+text-shadow: #302a19;
+padding: 5px;
+border: 10px rgb(167, 45, 45) solid;
+border-radius: 5px;
+padding: 10px;
+margin: 5px;
 }
-.item2pilates button:hover{
-    background-color: blue;
+.container-nav-pilates{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0;
+    padding: 10 px20px;
+}
+.nav-logo{
+    display: flex;
+    align-items: center;
+}
+.logo-lua{
+    border: #52ee8e;
+    height: 40px;
+    width: 60px;
+    padding: 10px 0;
+}
+.nav-boton{
     text-decoration: none;
+    box-sizing: 10px;
+}
+.nav-boton:hover{
+    background-color: orange;
+    color: aliceblue;
+    border: none;
 
 }
-a{text-decoration: none;}
-.item3pilates{
-    grid-area: main;
+/*----main pilates----*/
+.main-pilates{
+    grid-area: main-pilates;
+    display: flex;
+    align-items: center;
+    background-color: rgb(245, 171, 13);
+    flex-direction: column;
 
 }
-.item4pilates{
-    grid-area: sidebar;
+.main-pilates h2{
+    justify-content: center;
+    text-decoration: underline;
+}
+.lista-pilates-main{
+    color: aliceblue;
+    border: green;
 
 }
-.item5pilates{
-    grid-area: footer;
+/*----aside pilates----*/
+.aside-pilates{
+    grid-area: aside-pilates;
+    background-color: rgb(248, 193, 12);
+}
+.card-img-pilates{
+    width: 18rem
+}
+/*----footer pilates----*/
+.footer-pilates{
+    grid-area: footer-pilates;
+    background-color: orangered;
+
 }
 /*--Yoga--*/
-.contenedor-yoga{
-    display: flex; 
-    flex-direction: column;
-    padding: auto;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    gap: 40px;
-    
+.contenedor-yoga {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
 }
-/*--yoga header--*/
-.header-yoga{
+
+/*--header yoga--*/
+.header-yoga {
     grid-area: header;
-    background-color: blueviolet;
-    padding: 10px;
-
+    background-color: #e49219;
+    color: rgba(233, 90, 24, 0.733);
+    padding: 1rem;
+    text-align: center;
 }
-/*--yoga nav--*/
-.nav-yoga{
+/*--nav yoga--*/
+.nav-yoga {
     grid-area: nav;
-    color: aliceblue;
+gap: 50px;
+display:flex;
+justify-content: center;
+align-items: center;
+text-shadow: #302a19;
+padding: 5px;
+border: 10px rgb(167, 45, 45) solid;
+border-radius: 5px;
+padding: 10px;
+margin: 5px;
 }
-/*--yoga main--*/
-.main-yoga{
-    grid-area: main;
-
-}
-/*--yoga aside--*/
-.aside-yoga{
+/*--sidebar yoga--*/
+.sidebar-yoga {
     grid-area: sidebar;
-    background-color: bisque;
+    background-color: #52ee8e;
+    padding: 1rem;
+    border-right: 1px solid #0f7717;
 }
-/*--yoga footer--*/
-.footer-yoga{
+/*--main yoga--*/
+.main-yoga {
+    grid-area: main;
+    background-image: url('../imagenes/yoga1.png');
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+}
+
+.contenido-main-yoga {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+/*--footer yoga--*/
+.footer-yoga {
     grid-area: footer;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem;
 }
 
+/*--lista aside-yoga */
+.lista-beneficios-aside {
+    list-style-type: none;
+    padding: 0;
+}
 
+.lista-beneficios-aside li {
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dotted #e9f729;
+}
+
+/* boton del nav-yoga */
+.nav-yoga button {
+    background-color: #d1fd0d;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+.nav-yoga button:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav-yoga a {
+    color: white;
+    text-decoration: none;
+}
 /*--GALERIA--*/
+.contenedor-galeria{
+    display: grid;
+    grid-template-areas: "header-galeria header-galeria"
+    "nav-galeria nav-galeria"
+    "main-galeria aside-galeria"
+    "footer-galeria footer-galeria";
+    grid-template-columns: 1fr 1fr;
+}
+/*--galeria header--*/
+.header-galeria{
+    grid-area: header-galeria;
+    background-color: #df8a1b;
+    text-align: center;
+    color: yellow;
+    gap: 10px;
+}
+/*--galeria-nav--*/
+.nav-galeria{
+    grid-area: nav-galeria;
+    gap: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: #302a19;
+    padding: 5px;
+    border: 10px rgb(167, 45, 45) solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+.boton-nav-galeria a{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.nav-galeria button{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*--main galeria--*/
+.main-galeria{
+    grid-area: main-galeria;
+    padding: 1rem;
+    font-weight: bold;border-radius: 0 10px 0;
+}
+/*--aside galeria--*/
+.aside-galeria{
+    grid-area: aside-galeria;
+    background-color: #df8a1b;
+    justify-content: right;
+    padding: 20px;
+    justify-content: space-around;
+}
+/*--footer galeria--*/
+.footer-galeria{
+    grid-area: footer-galeria;
+    display: flex;
+    justify-content: center;
+    background-color: #0f7717;
+}
+/*--Sobre Nosotros--*/
+.contenedor-sobre-nosotros{
+    grid-template-areas: "header-sobre-nosotros header-sobre-nosotros"
+    "nav-sobre-nosotros nav-sobre-nosotros"
+    "main-sobre-nosotros asidebar-sobre-nosotros"
+    "footer-sobre-nosotros footer-sobre-nosotros";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+    gap: 10px;
+}
+/*--header -sobre-nosotros--*/
+.header-sobre-nosotros{
+    grid-area: header-sobre-nosotros;
+    background-color: rgb(249, 253, 7);
+    text-align: center;
+    padding: 20px;
+}
+.header-sobre-nosotros h1{
+    background-color: aliceblue;
+    color: orangered;
+}
+/*--nav sobre nosotros--*/
+.nav-sobre-nosotros{
+    grid-area: nav-sobre-nosotros;
+    display: flex;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+.nav-sobre-nosotros a{
+    text-decoration: none;
+    border: none;
+    color: #0f7717;
+    align-items: center;
+}
+.nav-sobre-nosotros button{
+    background-color: aliceblue;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+/*--main sobre nosotros--*/
+.main-sobre-nosotros{
+    grid-area: main-sobre-nosotros;
+    justify-content: space-around;
+    grid-template-columns: 1fr 1f;
+}
+.seccion-mapa-SN{
+    background-color: #0f7717;
+    border: #df8a1b;
+    padding: 30px;
+    margin: 10px;
+    justify-content: center;
+    box-sizing: 10px;
+
+}
+.map-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.seccion-contactos{
+    justify-content: center;
+}
+/*--aside sobre nosotros--*/
+.aside-sobre-nosotros{
+    grid-area: aside-sobre-nosotros;
+    display: flex;
+    justify-content: center;
+    background-color:yellow ;
+    row-gap: 10px;
+}
+/*--footer sobre nosotros--*/
+.footer-sobre-nosotros{
+    grid-area: footer-sobre-nosotros ;
+    background-color: green;
+}
