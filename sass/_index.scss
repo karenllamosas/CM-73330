@@ -9,28 +9,52 @@ $colores-lua: (
     color: $color-hex;
   }
 }
-.titulo {
-  font-family: 'Lunasima', sans-serif;
-  font-size: 3em;
-  text-align: center;
-}
-.cube {
-    flex-direction: column-reverse;
+.header {
+    background-color:aliceblue;
+    padding: 20px;
     position: relative;
     overflow: hidden;
-    transform-style: preserve-3d;
-    animation: rotativecube 5s infinite rotate;
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
-    perspective: 1000px;
 }
 
-@keyframes rotativecube {
-    from {
-        transform: rotateX(5deg) rotateY(5deg);
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .titulo {
+        font-size: 3em;
+        margin: 0;
+        flex-grow: 1;
+        text-align: center;
     }
-    to {
-        transform: rotateX(90deg) rotateY(180deg);
+}
+
+.logo-animado {
+    position: relative;
+    width: 100px;
+    flex-shrink: 0;
+    margin-right: 20px;
+    animation: slideInLogoIndex 1.5s ease-out forwards;
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+}
+
+
+@keyframes slideInLogoIndex {
+    0% {
+        transform: translateX(calc(100vw + 100%));
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1; 
     }
 }

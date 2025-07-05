@@ -10,30 +10,50 @@
   color: hsl(54, 100%, 62%);
 }
 
-.titulo {
-  font-family: "Lunasima", sans-serif;
+.header {
+  background-color: aliceblue;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.header-content .titulo {
   font-size: 3em;
+  margin: 0;
+  flex-grow: 1;
   text-align: center;
 }
 
-.cube {
-  flex-direction: column-reverse;
+.logo-animado {
   position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  animation: rotativecube 5s infinite rotate;
   width: 100px;
-  height: 100px;
-  margin: 20px auto;
-  perspective: 1000px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  animation: slideInLogoIndex 1.5s ease-out forwards;
+}
+.logo-animado img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes rotativecube {
-  from {
-    transform: rotateX(5deg) rotateY(5deg);
+@keyframes slideInLogoIndex {
+  0% {
+    transform: translateX(calc(100vw + 100%));
+    opacity: 0;
   }
-  to {
-    transform: rotateX(90deg) rotateY(180deg);
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 nav {
