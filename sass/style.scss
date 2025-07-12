@@ -6,23 +6,17 @@
 
 nav{ background-color: orange;}
 @mixin border-radius ($radius){ border-radius: $radius;}
-.header{
-    @include border-radius(50px)
 
+.header,
+.header-pilates {
+  @include border-radius(50px);
 }
-.header-pilates{
-    @include border-radius(50px)
-        }
-        .nav-logo{
-            justify-content: flex-start;
-        }
-        .cube {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: rotateCube 5s infinite linear;
-}
+.logo-animado {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: logo-animado 5s infinite linear; }
 
 @keyframes logo-animado {
     from {
