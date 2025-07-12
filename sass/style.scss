@@ -24,7 +24,7 @@ nav{ background-color: orange;}
     animation: rotateCube 5s infinite linear;
 }
 
-@keyframes rotateCube {
+@keyframes logo-animado {
     from {
         transform: rotateX(0deg) rotateY(0deg);
     }
