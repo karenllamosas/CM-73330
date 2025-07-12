@@ -36,7 +36,7 @@
   width: 100px;
   flex-shrink: 0;
   margin-right: 20px;
-  animation: slideInLogoIndex 1.5s ease-out forwards;
+  animation: logo-animado 1.5s ease-out forwards;
 }
 .logo-animado img {
   display: block;
@@ -46,7 +46,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes slideInLogoIndex {
+@keyframes logo-animado {
   0% {
     transform: translateX(calc(100vw + 100%));
     opacity: 0;
@@ -80,7 +80,7 @@ nav {
   animation: rotateCube 5s infinite linear;
 }
 
-@keyframes rotateCube {
+@keyframes logo-animado {
   from {
     transform: rotateX(0deg) rotateY(0deg);
   }
@@ -89,4 +89,4 @@ nav {
   }
 }
 
-/*# sourceMappingURL=estilo.css.map */
+

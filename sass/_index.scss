@@ -36,7 +36,7 @@ $colores-lua: (
     width: 100px;
     flex-shrink: 0;
     margin-right: 20px;
-    animation: slideInLogoIndex 1.5s ease-out forwards;
+    animation: logo-animado 1.5s ease-out forwards;
 
     img {
         display: block;
@@ -48,13 +48,9 @@ $colores-lua: (
 }
 
 
-@keyframes slideInLogoIndex {
-    0% {
-        transform: translateX(calc(100vw + 100%));
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1; 
-    }
+@keyframes move {
+    0%{transform: translateX(0) translateY(0) translateZ(0);}
+    33%{transform: translateX(100px) translateY(0) translateZ(0);}
+    66%{transform: translateX(100px) translateY(100px) translateZ(0);}
+    100%{transform: translateX(0) translateY(100px) translateZ(0);}
 }
