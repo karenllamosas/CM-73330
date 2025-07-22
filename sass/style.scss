@@ -11,18 +11,3 @@ nav{ background-color: orange;}
 .header-pilates {
   @include border-radius(50px);
 }
-.logo-animado {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: logo-animado 5s infinite linear; }
-
-@keyframes logo-animado {
-    from {
-        transform: rotateX(0deg) rotateY(0deg);
-    }
-    to {
-        transform: rotateX(360deg) rotateY(360deg);
-    }
-}

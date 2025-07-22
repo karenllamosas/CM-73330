@@ -29,21 +29,22 @@ $colores-lua: (
         flex-grow: 1;
         text-align: center;
     }
+    .logo-animado {
+      flex-direction: row;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: logo-animado 5s infinite linear; }
 }
 
-.logo-animado {
-    position: relative;
-    width: 100px;
-    flex-shrink: 0;
-    margin-right: 20px;
-    animation: 1.5s ease-out forwards;
 
-    img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        border-radius: 50%;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+@keyframes logo-animado {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
     }
 }
 

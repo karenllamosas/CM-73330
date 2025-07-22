@@ -20,102 +20,152 @@ body{
     height: 100vh;
     padding: 10px;
 }
-/*--MediaQueris--*/
-/*--Media Queries para diferentes pantallas--*/
+/*-- Estilos Base (Mobile First) --*/
+.contenedor-grid,
+.contenedor-pilates,
+.contenedor-yoga,
+.contenedor-galeria,
+.contenedor-sobre-nosotros {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 10px;
+}
 
-/*--Para pantallas mediana--*/
-@media screen and (min-width: 600px) {
+/* Diseños específicos para cada contenedor en móvil */
+.contenedor-grid {
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+.contenedor-pilates {
+    grid-template-areas:
+        "header-pilates"
+        "nav-pilates"
+        "main-pilates"
+        "aside-pilates"
+        "footer-pilates";
+}
+
+.contenedor-yoga {
+    grid-template-areas:
+        "header-yoga"
+        "nav-yoga"
+        "sidebar-yoga"
+        "footer-yoga";
+}
+
+.contenedor-galeria {
+    grid-template-areas:
+        "header-galeria"
+        "nav-galeria"
+        "main-galeria"
+        "footer-galeria";
+        /*--sin aside--*/
+}
+
+.contenedor-sobre-nosotros {
+    grid-template-areas:
+        "header-sobre-nosotros"
+        "nav-sobre-nosotros"
+        "main-sobre-nosotros"
+        "asidebar-sobre-nosotros"
+        "footer-sobre-nosotros";
+}
+
+/*-- Media Query para Pantallas Medianas (Tablets y algunas Laptops pequeñas) --*/
+@media screen and (min-width: 577px) and (max-width: 768px) {
     .contenedor-grid {
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto; 
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto 1fr auto;
         grid-template-areas:
-            "header header"
-            "nav    main"
-            "nav    sidebar"
-            "footer footer";
+            "header header header"
+            "nav nav nav"
+            "main main sidebar"
+            "footer footer footer";
+        background-color: orange;
     }
-    .contenedor-pilates{
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto; 
-        grid-template-areas:
-        "header-pilates header-pilates"
-        "nav-pilates nav-pilates"
-        "main-pilates aside-pilates"
-        "footer-pilates footer-pilates";
 
+    .contenedor-pilates,
+    .contenedor-yoga,
+    .contenedor-galeria,
+    .contenedor-sobre-nosotros {
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto 1fr auto;
     }
-    .contenedor-yoga{
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto; 
+
+    .contenedor-pilates {
+        display: grid;
         grid-template-areas:
-        "header header"
-        "nav nav"
-        "sidebar main"
-        "footer footer";
+            "header-pilates header-pilates ."
+            "nav-pilates nav-pilates ."
+            "main-pilates aside-pilates ."
+            "footer-pilates footer-pilates .";
     }
-    .contenedor-galeria{
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto; 
+
+    .contenedor-yoga {
+        display: grid;
         grid-template-areas:
-    "header-galeria header-galeria"
-    "nav-galeria nav-galeria"
-    "main-galeria aside-galeria"
-    "footer-galeria footer-galeria"}
-    .contenedor-sobre-nosotros{
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto; 
-        grid-template-areas: "header-sobre-nosotros header-sobre-nosotros"
-    "nav-sobre-nosotros nav-sobre-nosotros"
-    "main-sobre-nosotros asidebar-sobre-nosotros"
-    "footer-sobre-nosotros footer-sobre-nosotros"
+            "header header ."
+            "nav nav ."
+            "sidebar main ." /*para que sidebar esté a la izquierda */
+            "footer footer .";
+    }
+
+    .contenedor-galeria {
+        display: grid;
+        grid-template-areas:
+            "header-galeria header-galeria ."
+            "nav-galeria nav-galeria ."
+            "main-galeria aside-galeria ."
+            "footer-galeria footer-galeria .";
+    }
+
+    .contenedor-sobre-nosotros {
+        display: grid;
+        grid-template-areas:
+            "header-sobre-nosotros header-sobre-nosotros ."
+            "nav-sobre-nosotros nav-sobre-nosotros ."
+            "main-sobre-nosotros asidebar-sobre-nosotros ."
+            "footer-sobre-nosotros footer-sobre-nosotros .";
+        background-color: orange;
     }
 }
 
-/*--Para pantallas grandes (desktops)--*/
+/*-- Media Query para Pantallas Grandes (Laptops y Desktops) --*/
 @media screen and (min-width: 1024px) {
     .contenedor-grid {
+        display: grid;
         grid-template-columns: 1fr 3fr 1fr;
-        grid-template-rows: auto 1fr auto; 
+        grid-template-rows: auto 1fr auto;
         grid-template-areas:
             "header header header"
-            "nav    nav   nav"
+            "nav nav nav"
             "main main sidebar"
             "footer footer footer";
+        background-color: rgb(240, 142, 31);
     }
-        .contenedor-pilates{
-        grid-template-columns: 1fr 3fr 1fr;
-        grid-template-rows: auto 1fr auto; 
-        grid-template-areas:
-        "header-pilates header-pilates"
-        "nav-pilates nav-pilates"
-        "main-pilates aside-pilates"
-        "footer-pilates footer-pilates"
 
-    }
-    .contenedor-yoga{
-        grid-template-columns: 1fr 3fr 1fr;
-        grid-template-rows: auto 1fr auto;  
-        grid-template-areas:
-        "header header"
-        "nav nav"
-        "sidebar main"
-        "footer footer";
-    }
-    .contenedor-galeria{
-        grid-template-columns: 1fr 3fr 1fr;
-        grid-template-rows: auto 1fr auto; 
-        grid-template-areas: "header-galeria header-galeria"
-    "nav-galeria nav-galeria"
-    "main-galeria aside-galeria"
-    "footer-galeria footer-galeria"
+    /* Repito para los demás contenedores con diseño de desktop */
+    .contenedor-pilates,
+    .contenedor-yoga,
+    .contenedor-galeria,
+    .contenedor-sobre-nosotros {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        
     }
     .contenedor-sobre-nosotros{
-        grid-template-columns: 1fr 3fr 1fr;
-        grid-template-rows: auto 1fr auto; 
-        grid-template-areas: "header-sobre-nosotros header-sobre-nosotros"
-    "nav-sobre-nosotros nav-sobre-nosotros"
-    "main-sobre-nosotros asidebar-sobre-nosotros"
-    "footer-sobre-nosotros footer-sobre-nosotros"
+        display: grid;
+        grid-template-areas: "header-sobre-nosotros header-sobre-nosotros header-sobre-nosotros"
+        "nav-sobre-nosotros nav-sobre-nosotros nav-sobre-nosotros"
+        "main-sobre-nosotros main-sobre-nosotros asidebar-sobre-nosotros"
+        "footer-sobre-nosotros footer-sobre-nosotros footer-sobre-nosotros";
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 /*--Header del index--*/
@@ -483,14 +533,14 @@ margin: 5px;
 }
 /*--Sobre Nosotros--*/
 .contenedor-sobre-nosotros{
-    grid-template-areas: "header-sobre-nosotros header-sobre-nosotros"
-    "nav-sobre-nosotros nav-sobre-nosotros"
-    "main-sobre-nosotros asidebar-sobre-nosotros"
-    "footer-sobre-nosotros footer-sobre-nosotros";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto 1fr auto;
-    min-height: 100vh;
-    gap: 10px;
+    display: grid;
+    grid-template-areas: "header-sobre-nosotros header-sobre-nosotros header-sobre-nosotros"
+            "nav-sobre-nosotros nav-sobre-nosotros nav-sobre-nosotros"
+            "main-sobre-nosotros main-sobre-nosotros asidebar-sobre-nosotros"
+            "footer-sobre-nosotros footer-sobre-nosotros footer-sobre-nosotros";
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto 1fr;
+    ;
 }
 /*--header -sobre-nosotros--*/
 .header-sobre-nosotros{
@@ -557,9 +607,10 @@ margin: 5px;
 .aside-sobre-nosotros{
     grid-area: aside-sobre-nosotros;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     background-color:yellow ;
     row-gap: 10px;
+    gap: 10px;
 }
 /*--footer sobre nosotros--*/
 .footer-sobre-nosotros{

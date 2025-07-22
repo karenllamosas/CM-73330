@@ -11,10 +11,11 @@
 }
 
 .header {
-  background-color: aliceblue;
+  background-color: rgb(223, 141, 20);
   padding: 20px;
   position: relative;
   overflow: hidden;
+  align-items: center;
 }
 
 .header-content {
@@ -79,14 +80,4 @@ nav {
   transform-style: preserve-3d;
   animation: rotateCube 5s infinite linear;
 }
-
-@keyframes logo-animado {
-  from {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  to {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
-}
-
 
